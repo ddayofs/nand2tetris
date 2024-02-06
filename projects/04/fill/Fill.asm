@@ -12,3 +12,25 @@
 // the screen should remain fully clear as long as no key is pressed.
 
 //// Replace this comment with your code.
+
+addr = screen_addr;
+addr_tail = keyboard addr
+
+start:
+	while (keycode !=0)
+		;
+	while (addr < keyboard_addr)
+	{
+		RAM[addr] = -1;
+		addr = addr + 16;
+	}
+	while (keycode == 0)
+		;
+	addr = screen_addr;
+	while (addr < keyboard_addr)
+	{
+		RAM[addr] = 0;
+		addr = addr + 16;
+	}
+	goto start;
+
